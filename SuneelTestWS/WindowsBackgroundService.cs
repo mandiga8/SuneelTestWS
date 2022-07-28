@@ -27,9 +27,12 @@ namespace SuneelTestWS
             {
                 while (!stoppingToken.IsCancellationRequested)
                 {
+                    //Calling the method that contains the code to generate the CSV files
                     TriggerTheTradeAggJob();
 
                     await Task.Delay((1000 * 1) * iRunMinutes, stoppingToken);
+
+
                 }
             }
             catch (Exception ex)

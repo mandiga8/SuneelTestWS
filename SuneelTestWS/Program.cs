@@ -1,6 +1,11 @@
 using SuneelTestWS;
 
 IHost host = Host.CreateDefaultBuilder(args)
+    .UseWindowsService(options =>
+    {
+        options.ServiceName = "SuneelTestWS";
+    })
+
     .ConfigureServices(services =>
     {
         //Adding the Custom Classes to Dependency Injection
@@ -9,6 +14,11 @@ IHost host = Host.CreateDefaultBuilder(args)
 
         //Adding the Background Service as Hosted Service
         services.AddHostedService<WindowsBackgroundService>();
+    })
+    .ConfigureLogging((context, logging) =>
+    {
+        logging.AddConfiguration(
+            context.Configuration.GetSection("Logging"));
     })
     .Build();
 
