@@ -13,11 +13,11 @@ Windows Service Project to fetch data and write to a CSV file on specific time i
 
 ##Instructions to Setup, Build and Deploy this Application
 1. Download of Checkout of the project from master branch
-2. Make sure to change the value of "OutputCSVPath" property in appsettings, before running the applicaiton. Also in Test project
+2. Make sure to change the value of "OutputCSVPath" property in appsettings, before running the application. Also in Test project
 3. Open the code in Visual Studio 2022, and add the "PowerService.dll" from https://github.com/kkmoorthy/PetroineosCodingChallenge in both projects. 
 	* This DLL reference idly, should be via NuGet package
-4. Run the Test cases or the application, to very the code and functionality
-5. Run Publish in the Visual Studio. If profile is missing, make sure to create Profile as per the instructios in the Micrisoft Documentation (Reference links)
+4. Run the Test cases or the application, to veryify the code and functionality
+5. Run Publish in the Visual Studio. If profile is missing, make sure to create Profile as per the instructions in the Micrisoft Documentation (Reference links)
 6. After successful publish, open CMD as Administrator and run below command to install Windows Service
 	* sc.exe create "SuneelTestWS" start=auto binpath="D:\Working\dotnet\SuneelTestWS\SuneelTestWS\bin\Release\net6.0\publish\win-x64\SuneelTestWS.exe"
 7. To delete the service use below command
